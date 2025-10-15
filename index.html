@@ -1,232 +1,453 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <title>Digital</title>
+    <title>Security Cube — Train People. Automate Compliance. Level Up Maturity.</title>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="author" content="TemplatesJungle">
-    <meta name="keywords" content="html,css,template">
-    <meta name="description" content="Bootstrap 5 Digital Marketing Agency HTML CSS Template">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="Security Cube" />
+    <meta name="keywords" content="cybersecurity, ISO 27001, NIST CSF, Essential Eight, training, GRC, risk management" />
+    <meta name="description" content="Security Cube — cybersecurity training, GRC automation, and affordable consulting. Map ISO 27001:2022, NIST CSF 2.0, Essential Eight and more in one platform." />
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-    <!--style sheet-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/vendor.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Apple Store-inspired palette & typography */
+        :root {
+            --brand-bg: #fff;
+            --brand-surface: #f5f5f7;
+            --brand-line: #d2d2d7;
+            --brand-text: #1d1d1f;
+            --brand-subtle: #6e6e73;
+            --brand-primary: #0071e3;
+            --brand-primary-hover: #0077ed;
+            --brand-link: #0066cc;
+            --brand-accent: #06c;
+            --bs-body-bg: var(--brand-bg);
+            --bs-body-color: var(--brand-text);
+            --bs-primary: var(--brand-primary);
+            --bs-primary-rgb: 0,113,227;
+            --bs-secondary: #6e6e73;
+        }
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, system-ui, sans-serif;
+            color: var(--brand-text);
+            background: var(--brand-bg);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--brand-link);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        /* Header with glassmorphism */
+        .top-header {
+            background: rgba(255,255,255,.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--brand-line);
+            transition: all 0.3s ease;
+        }
+
+            .top-header.scrolled {
+                background: rgba(255,255,255,.85);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            }
+
+        .navbar-brand span {
+            letter-spacing: .02em;
+            font-weight: 700;
+            color: var(--brand-text);
+        }
+
+        .navbar .nav-link {
+            color: var(--brand-text);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+            .navbar .nav-link:hover {
+                color: #000;
+                transform: translateY(-1px);
+            }
+
+            .navbar .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: var(--brand-primary);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+
+            .navbar .nav-link:hover::after {
+                width: 80%;
+            }
+
+        /* Enhanced Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, #005bb5 100%);
+            border: none;
+            border-radius: 980px;
+            padding: .75rem 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,113,227,0.2);
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient(135deg, var(--brand-primary-hover) 0%, #006acc 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0,113,227,0.3);
+            }
+
+        .btn-outline-primary {
+            color: var(--brand-primary);
+            border: 2px solid var(--brand-primary);
+            border-radius: 980px;
+            padding: .7rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .btn-outline-primary:hover {
+                background-color: var(--brand-primary);
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0,113,227,0.2);
+            }
+
+        /* Hero with gradient background and animations */
+        #billboard {
+            background: linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 50%, #fff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+            #billboard::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -10%;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, rgba(0,113,227,0.08) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: float 20s ease-in-out infinite;
+            }
+
+            #billboard::after {
+                content: '';
+                position: absolute;
+                bottom: -30%;
+                left: -5%;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(0,102,204,0.06) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: float 15s ease-in-out infinite reverse;
+            }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        #billboard .hero-wrap {
+            min-height: clamp(560px, 80vh, 920px);
+            display: grid;
+            place-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        #billboard p.lede {
+            color: var(--brand-subtle);
+        }
+
+        .hero-wrap img {
+            animation: fadeInUp 1s ease-out;
+            transition: transform 0.5s ease;
+        }
+
+            .hero-wrap img:hover {
+                transform: scale(1.05) rotate(1deg);
+            }
+
+        .hero-wrap h1 {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-wrap p {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-wrap .btn {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section.padding-medium {
+            padding: 5rem 0;
+        }
+
+        .kicker {
+            color: var(--brand-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: .875rem;
+            display: inline-block;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Enhanced Tiles with hover effects */
+        .tile {
+            background: var(--brand-surface);
+            border: 1px solid var(--brand-line);
+            border-radius: 24px;
+            padding: 32px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .tile::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(0,113,227,0.03) 0%, transparent 50%);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            .tile:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+                border-color: rgba(0,113,227,0.2);
+            }
+
+                .tile:hover::before {
+                    opacity: 1;
+                }
+
+            .tile h4, .tile h3 {
+                margin-bottom: .75rem;
+                transition: color 0.3s ease;
+            }
+
+            .tile:hover h4, .tile:hover h3 {
+                color: var(--brand-primary);
+            }
+
+        /* Service cards stagger animation */
+        .service-card {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+            .service-card:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            .service-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .service-card:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+        /* Feature tiles stagger */
+        .feature-tile {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+            .feature-tile:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            .feature-tile:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .feature-tile:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+            .feature-tile:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+
+        /* Image containers */
+        .img-container {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+
+            .img-container:hover {
+                transform: scale(1.02);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            }
+
+        /* CTA Section with gradient */
+        #cta {
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            border-radius: 32px;
+            margin: 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+            #cta::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 400px;
+                height: 400px;
+                background: radial-gradient(circle, rgba(0,113,227,0.1) 0%, transparent 70%);
+                border-radius: 50%;
+            }
+
+        /* Footer enhancements */
+        #footer {
+            background: linear-gradient(180deg, var(--brand-surface) 0%, #e8e8ed 100%);
+            color: var(--brand-subtle);
+            border-top: 1px solid var(--brand-line);
+        }
+
+            #footer .display-6 {
+                background: linear-gradient(135deg, var(--brand-text) 0%, var(--brand-primary) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            #footer a {
+                color: var(--brand-text);
+                transition: all 0.3s ease;
+            }
+
+                #footer a:hover {
+                    color: var(--brand-primary);
+                    transform: translateX(3px);
+                }
+
+        /* Accessibility focus */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        /* Scroll reveal utility */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+            .scroll-reveal.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            section.padding-medium {
+                padding: 3rem 0;
+            }
+
+            .tile {
+                padding: 24px;
+            }
+
+            #cta {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <svg style="display: none;">
-        <symbol id="navbar-icon" viewBox="0 0 21 21">
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                d="M4.5 6.5h12m-12.002 4h11.997M4.5 14.5h11.995" />
-        </symbol>
-        <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 512 512">
-            <path fill="currentColor"
-                d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3M97.92 222.72a124.8 124.8 0 1 1 124.8 124.8a124.95 124.95 0 0 1-124.8-124.8" />
-        </symbol>
-        <symbol id="uil--coffee" viewBox="0 0 24 24">
-            <path fill="#f9a01f"
-                d="M9 17h4a5 5 0 0 0 5-5v-1h1a3 3 0 0 0 0-6h-1V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v8a5 5 0 0 0 5 5m9-10h1a1 1 0 0 1 0 2h-1ZM6 5h10v7a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3Zm15 14H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
-        </symbol>
-        <symbol id="uil--clipboard-alt" viewBox="0 0 24 24">
-            <path fill="#f9a01f"
-                d="M15 14H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m0-4h-4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2m2-6h-1.18A3 3 0 0 0 13 2h-2a3 3 0 0 0-2.82 2H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m-7 1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm8 14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6h1a1 1 0 0 1 1 1Z" />
-        </symbol>
-        <symbol id="uil--comment-alt-chart-lines" viewBox="0 0 24 24">
-            <path fill="#f9a01f"
-                d="M12 8a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1m-4 3a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1m11-9H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h11.59l3.7 3.71A1 1 0 0 0 21 22a.84.84 0 0 0 .38-.08A1 1 0 0 0 22 21V5a3 3 0 0 0-3-3m1 16.59l-2.29-2.3A1 1 0 0 0 17 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1ZM16 6a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0V7a1 1 0 0 0-1-1" />
-        </symbol>
-        <symbol id="uil--desktop-alt" viewBox="0 0 24 24">
-            <path fill="#f9a01f"
-                d="M19 2H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h3v2H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2h-3v-2h3a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3m-5 18h-4v-2h4Zm6-5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16Zm0-3H4V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z" />
-        </symbol>
-        <symbol id="behance" viewBox="0 0 512 512">
-            <path fill="white"
-                d="M344.1 233.6c-28.9 0-32.9 28.8-32.9 28.8h61.4s.4-28.8-28.5-28.8m-139.3 28.8h-54.4v50h51.7c7.8-.2 22.4-2.4 22.4-24.3c0-26-19.7-25.7-19.7-25.7" />
-            <path fill="white"
-                d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224s224-100.3 224-224S379.7 32 256 32m47.2 137.6h77.1v23h-77.1zm-39 120.8c0 57-59.4 55.2-59.4 55.2h-97.2v-187h97.2c29.6 0 52.9 16.3 52.9 49.8S229.2 244 229.2 244c37.6 0 35 46.4 35 46.4m144.2-3.1h-96.9c0 34.7 32.9 32.5 32.9 32.5c31.1 0 30-20.1 30-20.1h32.9c0 53.4-64 49.7-64 49.7c-76.7 0-71.8-71.5-71.8-71.5s-.1-71.8 71.8-71.8c75.7.1 65.1 81.2 65.1 81.2" />
-            <path fill="white" d="M218 211.3c0-19.4-13.2-19.4-13.2-19.4h-54.4v41.7h51c8.8 0 16.6-2.9 16.6-22.3" />
-        </symbol>
-        <symbol id="pinterest" viewBox="0 0 512 512">
-            <path fill="white"
-                d="M256.05 32c-123.7 0-224 100.3-224 224c0 91.7 55.2 170.5 134.1 205.2c-.6-15.6-.1-34.4 3.9-51.4c4.3-18.2 28.8-122.1 28.8-122.1s-7.2-14.3-7.2-35.4c0-33.2 19.2-58 43.2-58c20.4 0 30.2 15.3 30.2 33.6c0 20.5-13.1 51.1-19.8 79.5c-5.6 23.8 11.9 43.1 35.4 43.1c42.4 0 71-54.5 71-119.1c0-49.1-33.1-85.8-93.2-85.8c-67.9 0-110.3 50.7-110.3 107.3c0 19.5 5.8 33.3 14.8 43.9c4.1 4.9 4.7 6.9 3.2 12.5c-1.1 4.1-3.5 14-4.6 18c-1.5 5.7-6.1 7.7-11.2 5.6c-31.3-12.8-45.9-47-45.9-85.6c0-63.6 53.7-139.9 160.1-139.9c85.5 0 141.8 61.9 141.8 128.3c0 87.9-48.9 153.5-120.9 153.5c-24.2 0-46.9-13.1-54.7-27.9c0 0-13 51.6-15.8 61.6c-4.7 17.3-14 34.5-22.5 48a225.1 225.1 0 0 0 63.5 9.2c123.7 0 224-100.3 224-224S379.75 32 256.05 32" />
-        </symbol>
-        <symbol id="instagram" viewBox="0 0 512 512">
-            <path fill="white"
-                d="M349.33 69.33a93.62 93.62 0 0 1 93.34 93.34v186.66a93.62 93.62 0 0 1-93.34 93.34H162.67a93.62 93.62 0 0 1-93.34-93.34V162.67a93.62 93.62 0 0 1 93.34-93.34zm0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32" />
-            <path fill="white"
-                d="M377.33 162.67a28 28 0 1 1 28-28a27.94 27.94 0 0 1-28 28M256 181.33A74.67 74.67 0 1 1 181.33 256A74.75 74.75 0 0 1 256 181.33m0-37.33a112 112 0 1 0 112 112a112 112 0 0 0-112-112" />
-        </symbol>
-        <symbol id="twitter" viewBox="0 0 512 512">
-            <path fill="white"
-                d="M496 109.5a201.8 201.8 0 0 1-56.55 15.3a97.5 97.5 0 0 0 43.33-53.6a197.7 197.7 0 0 1-62.56 23.5A99.14 99.14 0 0 0 348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.2 93.2 0 0 0 2.54 22.1a280.7 280.7 0 0 1-203-101.3A95.7 95.7 0 0 0 36 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0 1 35.22 199v1.2c0 47 34 86.1 79 95a100.8 100.8 0 0 1-25.94 3.4a94.4 94.4 0 0 1-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.6 199.6 0 0 1 39.5 405.6a203 203 0 0 1-23.5-1.4A278.7 278.7 0 0 0 166.74 448c181.36 0 280.44-147.7 280.44-275.8c0-4.2-.11-8.4-.31-12.5A198.5 198.5 0 0 0 496 109.5" />
-        </symbol>
-        <symbol id="facebook" viewBox="0 0 512 512">
-            <path fill="white" fill-rule="evenodd"
-                d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16c24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31" />
-        </symbol>
-        <symbol id="menu" viewBox="0 0 24 24">
-            <path fill="black"
-                d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z" />
-        </symbol>
-        <symbol id="uil--coffee" viewBox="0 0 24 24">
-            <path fill="F9A01F"
-                d="M9 17h4a5 5 0 0 0 5-5v-1h1a3 3 0 0 0 0-6h-1V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v8a5 5 0 0 0 5 5m9-10h1a1 1 0 0 1 0 2h-1ZM6 5h10v7a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3Zm15 14H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
-        </symbol>
-        <symbol id="uil--clipboard-alt" viewBox="0 0 24 24">
-            <path fill="F9A01F"
-                d="M15 14H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m0-4h-4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2m2-6h-1.18A3 3 0 0 0 13 2h-2a3 3 0 0 0-2.82 2H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3m-7 1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm8 14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6h1a1 1 0 0 1 1 1Z" />
-        </symbol>
-        <symbol id="uil--comment-alt-chart-lines" viewBox="0 0 24 24">
-            <path fill="F9A01F"
-                d="M12 8a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1m-4 3a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1m11-9H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h11.59l3.7 3.71A1 1 0 0 0 21 22a.84.84 0 0 0 .38-.08A1 1 0 0 0 22 21V5a3 3 0 0 0-3-3m1 16.59l-2.29-2.3A1 1 0 0 0 17 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1ZM16 6a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0V7a1 1 0 0 0-1-1" />
-        </symbol>
-        <symbol id="uil--desktop-alt" viewBox="0 0 24 24">
-            <path fill="F9A01F"
-                d="M19 2H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h3v2H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2h-3v-2h3a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3m-5 18h-4v-2h4Zm6-5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16Zm0-3H4V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z" />
-        </symbol>
-        <symbol id="behance" viewBox="0 0 512 512">
-            <path fill="currentColor"
-                d="M344.1 233.6c-28.9 0-32.9 28.8-32.9 28.8h61.4s.4-28.8-28.5-28.8m-139.3 28.8h-54.4v50h51.7c7.8-.2 22.4-2.4 22.4-24.3c0-26-19.7-25.7-19.7-25.7" />
-            <path fill="currentColor"
-                d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224s224-100.3 224-224S379.7 32 256 32m47.2 137.6h77.1v23h-77.1zm-39 120.8c0 57-59.4 55.2-59.4 55.2h-97.2v-187h97.2c29.6 0 52.9 16.3 52.9 49.8S229.2 244 229.2 244c37.6 0 35 46.4 35 46.4m144.2-3.1h-96.9c0 34.7 32.9 32.5 32.9 32.5c31.1 0 30-20.1 30-20.1h32.9c0 53.4-64 49.7-64 49.7c-76.7 0-71.8-71.5-71.8-71.5s-.1-71.8 71.8-71.8c75.7.1 65.1 81.2 65.1 81.2" />
-            <path fill="currentColor"
-                d="M218 211.3c0-19.4-13.2-19.4-13.2-19.4h-54.4v41.7h51c8.8 0 16.6-2.9 16.6-22.3" />
-        </symbol>
-        <symbol id="pinterest" viewBox="0 0 512 512">
-            <path fill="currentColor"
-                d="M256.05 32c-123.7 0-224 100.3-224 224c0 91.7 55.2 170.5 134.1 205.2c-.6-15.6-.1-34.4 3.9-51.4c4.3-18.2 28.8-122.1 28.8-122.1s-7.2-14.3-7.2-35.4c0-33.2 19.2-58 43.2-58c20.4 0 30.2 15.3 30.2 33.6c0 20.5-13.1 51.1-19.8 79.5c-5.6 23.8 11.9 43.1 35.4 43.1c42.4 0 71-54.5 71-119.1c0-49.1-33.1-85.8-93.2-85.8c-67.9 0-110.3 50.7-110.3 107.3c0 19.5 5.8 33.3 14.8 43.9c4.1 4.9 4.7 6.9 3.2 12.5c-1.1 4.1-3.5 14-4.6 18c-1.5 5.7-6.1 7.7-11.2 5.6c-31.3-12.8-45.9-47-45.9-85.6c0-63.6 53.7-139.9 160.1-139.9c85.5 0 141.8 61.9 141.8 128.3c0 87.9-48.9 153.5-120.9 153.5c-24.2 0-46.9-13.1-54.7-27.9c0 0-13 51.6-15.8 61.6c-4.7 17.3-14 34.5-22.5 48a225.1 225.1 0 0 0 63.5 9.2c123.7 0 224-100.3 224-224S379.75 32 256.05 32" />
-        </symbol>
-        <symbol id="instagram" viewBox="0 0 512 512">
-            <path fill="currentColor"
-                d="M349.33 69.33a93.62 93.62 0 0 1 93.34 93.34v186.66a93.62 93.62 0 0 1-93.34 93.34H162.67a93.62 93.62 0 0 1-93.34-93.34V162.67a93.62 93.62 0 0 1 93.34-93.34zm0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32" />
-            <path fill="currentColor"
-                d="M377.33 162.67a28 28 0 1 1 28-28a27.94 27.94 0 0 1-28 28M256 181.33A74.67 74.67 0 1 1 181.33 256A74.75 74.75 0 0 1 256 181.33m0-37.33a112 112 0 1 0 112 112a112 112 0 0 0-112-112" />
-        </symbol>
-        <symbol id="twitter" viewBox="0 0 512 512">
-            <path fill="currentColor"
-                d="M496 109.5a201.8 201.8 0 0 1-56.55 15.3a97.5 97.5 0 0 0 43.33-53.6a197.7 197.7 0 0 1-62.56 23.5A99.14 99.14 0 0 0 348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.2 93.2 0 0 0 2.54 22.1a280.7 280.7 0 0 1-203-101.3A95.7 95.7 0 0 0 36 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0 1 35.22 199v1.2c0 47 34 86.1 79 95a100.8 100.8 0 0 1-25.94 3.4a94.4 94.4 0 0 1-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.6 199.6 0 0 1 39.5 405.6a203 203 0 0 1-23.5-1.4A278.7 278.7 0 0 0 166.74 448c181.36 0 280.44-147.7 280.44-275.8c0-4.2-.11-8.4-.31-12.5A198.5 198.5 0 0 0 496 109.5" />
-        </symbol>
-        <symbol id="facebook" viewBox="0 0 512 512">
-            <path fill="currentColor" fill-rule="evenodd"
-                d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16c24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31" />
-        </symbol>
+    <!-- SVG sprite -->
+    <svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden">
+        <symbol id="icon-bars" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M4.5 6.5h12m-12.002 4h11.997M4.5 14.5h11.995" /></symbol>
     </svg>
 
-    <header class="position-absolute w-100 z-3">
+    <header class="position-sticky top-0 w-100 z-3">
         <nav id="primary-header" class="navbar top-header navbar-expand-lg py-3 px-2">
             <div class="container-fluid mx-xl-5">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" class="logo img-fluid">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#billboard" aria-label="Security Cube home">
+                    <img src="images/logo.png" class="logo img-fluid" alt="Security Cube logo" style="height:28px" />
+                    <span>Security Cube</span>
                 </a>
-                <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
-                    data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar"
-                    aria-expanded="false">
-                    <svg class="text-black" width="40" height="40">
-                        <use xlink:href="#navbar-icon"></use>
-                    </svg>
+                <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Open navigation">
+                    <svg class="text-black" width="40" height="40" aria-hidden="true"><use href="#icon-bars"></use></svg>
                 </button>
-                <div class="header-bottom offcanvas offcanvas-end" id="bdNavbar"
-                    aria-labelledby="bdNavbarOffcanvasLabel">
+                <div class="header-bottom offcanvas offcanvas-end" id="siteNav" aria-labelledby="siteNavLabel">
                     <div class="offcanvas-header p-4">
-                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
-                            aria-label="Close" data-bs-target="#bdNavbar"></button>
+                        <h2 id="siteNavLabel" class="h5 m-0">Menu</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close navigation"></button>
                     </div>
                     <div class="offcanvas-body align-items-center justify-content-center">
-                        <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase">
-                            <li class="nav-item px-4">
-                                <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item px-4">
-                                <a class="nav-link p-0" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item px-4">
-                                <a class="nav-link p-0" href="blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item dropdown px-4">
-                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false"
-                                    class="nav-link p-0 dropdown-toggle">Services</a>
-                                <ul class="dropdown-menu">
-                                    <li class="border-bottom"><a href="services.html" class="dropdown-item">Services
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="service-details.html"
-                                            class="dropdown-item">Service-Details
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown px-4">
-                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false"
-                                    class="nav-link p-0 dropdown-toggle">Projects</a>
-                                <ul class="dropdown-menu">
-                                    <li class="border-bottom"><a href="projects.html" class="dropdown-item">Projects
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="project-details.html"
-                                            class="dropdown-item">Project-Details
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown px-4">
-                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false"
-                                    class="nav-link p-0 dropdown-toggle">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li class="border-bottom"><a href="about.html" class="dropdown-item">About us
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="blog.html" class="dropdown-item">Blog <span
-                                                class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="single-post.html"
-                                            class="dropdown-item">Single-Post <span
-                                                class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="pricing.html" class="dropdown-item">Price-Plan
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="team.html" class="dropdown-item">Team <span
-                                                class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="faq.html" class="dropdown-item">FAQs <span
-                                                class="badge bg-primary">PRO</span></a></li>
-                                    <li class="border-bottom"><a href="contact.html" class="dropdown-item">Contact us
-                                            <span class="badge bg-primary">PRO</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item px-4">
-                                <a class="nav-link p-0 fw-bold text-uppercase text-decoration-underline"
-                                    href="https://templatesjungle.gumroad.com/l/digital-marketing-agency-free-html-website-template"
-                                    target="_blank">Get Pro</a>
-                            </li>
-                            <li class="nav-item px-4 search-dropdown dropdown">
-                                <a class="nav-link p-0 search dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                    role="button" aria-expanded="false">
-                                    <svg class="search" width="24" height="24">
-                                        <use xlink:href="#search"></use>
-                                    </svg>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 p-3 shadow">
-                                    <li class="position-relative d-flex align-items-center p-0">
-                                        <input class="form-control me-2 shadow-none" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-primary position-absolute end-0" type="submit">
-                                            <svg class="search" width="24" height="24">
-                                                <use xlink:href="#search"></use>
-                                            </svg>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </li>
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item px-3"><a class="nav-link active p-0" aria-current="page" href="#billboard">Home</a></li>
+                            <li class="nav-item px-3"><a class="nav-link p-0" href="#services">Solutions</a></li>
+                            <li class="nav-item px-3"><a class="nav-link p-0" href="#feature">Why Us</a></li>
+                            <li class="nav-item px-3"><a class="nav-link p-0" href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -234,525 +455,168 @@
         </nav>
     </header>
 
-    <section id="billboard">
-        <div
-            style="background-image: url(images/background.png);background-repeat: no-repeat; width: 100%; height: 930px;">
-            <div class="container d-flex position-relative">
-                <div class="row flex-row-reverse align-items-center padding-medium mt-md-5">
-                    <div class="col-md-5">
-                        <img src="images/banner-illustration.png" class="img-fluid" alt="banner">
-                    </div>
-                    <div class="col-md-7 mt-4 mt-md-0">
-                        <p class="fs-4 text-capitalize text-primary">
-                            your gateway digital success!
-                        </p>
-                        <h2 class="herotext display-4 fw-bold text-capitalize mb-4">
-                            Ready to take your digital presence to the next level?
-                        </h2>
-                        <p class="fs-5">
-                            Don't miss out on the opportunity to work with a digital marketing agency that's
-                            committed to
-                            your success.
-                        </p>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-secondary mt-3 text-uppercase me-2">Free trial</a>
-                            <a href="#" class="btn btn-primary mt-3 text-uppercase">Get Started</a>
-
+    <main>
+        <!-- HERO -->
+        <section id="billboard">
+            <div class="hero-wrap">
+                <div class="container d-flex position-relative">
+                    <div class="row align-items-center padding-medium mt-md-5 w-100 g-4">
+                        <div class="col-md-6 order-md-2 text-center">
+                            <img src="images/banner-illustration.png" class="img-fluid" alt="Security automation illustration" loading="eager" />
+                        </div>
+                        <div class="col-md-6 order-md-1 mt-4 mt-md-0">
+                            <span class="kicker">Security Cube</span>
+                            <h1 class="display-5 fw-bold mb-3">Train. Automate. Secure.</h1>
+                            <p class="fs-5 lede">One platform for <strong>ISO 27001</strong>, <strong>NIST CSF</strong>, and <strong>Essential Eight</strong> compliance.</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="#contact" class="btn btn-primary mt-2">Get Started</a>
+                                <a href="#services" class="btn btn-outline-primary mt-2">Explore Solutions</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="services" class="padding-medium">
-        <div class="container">
-            <div class="">
-                <h3 class="fw-bolder text-center mb-5">
-                    Our Services
-                </h3>
-                <div class="row py-3">
-                    <div class="col-md-4 border-dark-subtle border-end px-5">
-                        <h4 class="sectiontitle display-1 text-light">
-                            01
-                        </h4>
-                        <h5>
-                            Digital Marketing
-                        </h5>
-                        <p>
-                            From SEO to PPC, social media marketing to email campaigns, we craft tailored strategies to
-                            boost your on line presence and drive meaningful engagement
-                        </p>
+        <!-- SOLUTIONS -->
+        <section id="services" class="padding-medium">
+            <div class="container">
+                <div class="text-center mb-5 scroll-reveal">
+                    <span class="kicker">Solutions</span>
+                    <h2 class="fw-bolder mt-2">What we do</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 service-card">
+                        <div class="tile h-100">
+                            <h4>Security Solutions</h4>
+                            <p class="mb-0">Endpoint, identity, cloud security, SIEM/SOAR, and incident response.</p>
+                        </div>
                     </div>
-                    <div class="col-md-4 border-dark-subtle border-end px-5">
-                        <h4 class="sectiontitle display-1 text-primary">
-                            02
-                        </h4>
-                        <h5>
-                            Content Creation
-                        </h5>
-                        <p>
-                            Our team of skilled writers and creatives will develop captivating content that resonates
-                            with your audience and enhances your brand's story.
-                        </p>
+                    <div class="col-md-4 service-card">
+                        <div class="tile h-100">
+                            <h4>Advisory & Consulting</h4>
+                            <p class="mb-0">ISO 27001, NIST CSF, risk assessments, audits, and vCISO support.</p>
+                        </div>
                     </div>
-                    <div class="col-md-4 border-end px-5">
-                        <h4 class="sectiontitle display-1 text-secondary">
-                            03
-                        </h4>
-                        <h5>
-                            Analytics and Optimization
-                        </h5>
-                        <p>
-                            Our experts will analyze key metrics, identify areas for improvement, and continuously
-                            optimize your campaigns for maximum ROI.
-                        </p>
+                    <div class="col-md-4 service-card">
+                        <div class="tile h-100">
+                            <h4>Security Training</h4>
+                            <p class="mb-0">Awareness campaigns, phishing simulations, and hands-on labs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="feature">
-        <div class="container">
-            <div class="text-center">
-                <h3 class="fw-bolder text-center mb-5"> Why Choose Us?</h3>
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <img src="images/ill-1.png" class="img-fluid">
+        <!-- WHY CHOOSE US -->
+        <section id="feature" class="padding-medium">
+            <div class="container">
+                <div class="text-center mb-5 scroll-reveal">
+                    <span class="kicker">Why Security Cube?</span>
+                    <h2 class="fw-bolder mt-2">Simple by design</h2>
+                </div>
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6 scroll-reveal">
+                        <div class="img-container">
+                            <img src="images/ill-1.png" class="img-fluid" alt="Framework mapping and dashboards" loading="lazy" decoding="async">
+                        </div>
                     </div>
                     <div class="col-md-6">
-
-                        <div class="text-start text-bg-info border rounded-5 px-4 py-3 m-3">
-                            <h5 class="text-primary">
-                                Proven Track Record
-                            </h5>
-                            <p>
-                                With years of experience and a portfolio of successful projects, we have the
-                                expertise to deliver results-driven solutions.
-                            </p>
+                        <div class="tile mb-3 feature-tile">
+                            <h3 class="h5 m-0">Standards mapped</h3>
+                            <p class="mb-0 text-secondary">ISO 27001, NIST CSF, Essential Eight in one place.</p>
                         </div>
-                        <div class="text-start text-bg-info border rounded-5 px-4 py-3 m-3">
-                            <h5 class="text-secondary">
-                                Client-Centric Approach
-                            </h5>
-                            <p>
-                                Your success is our priority. We take the time to understand your unique goals
-                                and
-                                tailor our strategies to meet your specific needs.
-                            </p>
+                        <div class="tile mb-3 feature-tile">
+                            <h3 class="h5 m-0">Microsoft-native</h3>
+                            <p class="mb-0 text-secondary">Built on SharePoint, Power Automate, and Power BI.</p>
                         </div>
-                        <div class="text-start text-bg-info border rounded-5 px-4 py-3 m-3">
-                            <h5 class="text-light">
-                                Transparent Communication
-                            </h5>
-                            <p>
-                                We believe in open and honest communication every step of the way. You'll always
-                                be
-                                kept in the loop, with regular updates and reports on your campaign's progress.
-                            </p>
+                        <div class="tile mb-3 feature-tile">
+                            <h3 class="h5 m-0">Built for SMBs</h3>
+                            <p class="mb-0 text-secondary">Fast deployment. Transparent pricing.</p>
                         </div>
-                        <div class="text-start text-bg-info border rounded-5 px-4 py-3 m-3">
-                            <h5 class="text-primary">
-                                Dedicated Support
-                            </h5>
-                            <p>
-                                Our team is here to support you throughout your digital journey. Whether you
-                                have
-                                questions, concerns, or need assistance, we're just a call or email away.
-                            </p>
+                        <div class="tile feature-tile">
+                            <h3 class="h5 m-0">Measurable results</h3>
+                            <p class="mb-0 text-secondary">Track risk reduction and audit readiness.</p>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="works" class="padding-medium mt-5">
-        <div class="position-relative z-n1">
-            <div class="position-absolute">
-                <h2 class="sectiontext display-4 text-uppercase">Case Studies</h2>
-            </div>
-        </div>
-        <div class="container text-center">
-            <div>
-                <h3 class="fw-bolder text-center mb-5">
-                    Our Works
-                </h3>
-            </div>
-            <div class="row py-3">
-                <div class="col-md-4 col-lg-2">
-                    <img src="images/product-1.jpg" class="img-fluid">
-                    <a href="#">
-                        <h6 class="py-3">ViralVista</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <img src="images/product-2.jpg" class="img-fluid">
-                    <a href="#">
-                        <h6 class="py-3">BuzzBeacon Media</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <img src="images/product-3.jpg" class="img-fluid">
-                    <a href="#">
-                        <h6 class="py-3">SocialFlare Agency</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <img src="images/product-4.jpg" class="img-fluid">
-                    <a href="#">
-                        <h6 class="py-3">EngageEra</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <img src="images/product-5.jpg" class="img-fluid">
-                    <a href="#">
-                        <h6 class="py-3">ReelTrend Creators</h6>
-                    </a>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <img src="images/product-6.jpg" class="img-fluid">
-                    <a href="#">
-                        <h6 class="py-3">Flux Branding Co.</h6>
-                    </a>
+        <!-- CTA -->
+        <section id="cta" class="py-5 my-5">
+            <div class="container text-center py-4 position-relative" style="z-index:1">
+                <h2 class="fw-bolder mb-3">Ready to level up?</h2>
+                <p class="mb-4 text-secondary">Book a call to see the platform in action.</p>
+                <div class="d-flex gap-2 justify-content-center flex-wrap">
+                    <a href="#contact" class="btn btn-primary">Book a call</a>
+                    <a href="#services" class="btn btn-outline-primary">Explore solutions</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="pricing">
-        <div class="container">
-            <div class="section-title mb-5 text-center">
-                <h3 class="fw-bolder text-center mb-5">
-                    Pricing Plans
-                </h3>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <div
-                        class="py-5 plan-post shadow-sm d-flex flex-column justify-content-between text-center border rounded-4 text-center my-4">
-                        <div class="plan-top">
-                            <h4 class="fw-bold">Basic</h4>
-                            <p class="fs-5 mb-5">$48 per month</p>
-
-                            <div class="price-option mt-3 p-3   ">
-                                <p><span class="price-tick">✓</span> Quisque rhoncus</p>
-                                <p><span class="price-tick">✓</span> Lorem ipsum dolor</p>
-                                <p><span class="price-tick">✓</span> Vivamus velit mir</p>
-                                <p><span class="price-tick">✓</span> Elit mir ivamus</p>
-                                <p> - </p>
-                                <p> - </p>
-                                <p> - </p>
-                                <p> - </p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary mx-auto mt-5">Buy Now</a>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container py-5">
+            <div class="row align-items-start g-5 mb-5">
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-3">Let's talk</h2>
+                    <p class="fs-5 mb-0" style="max-width: 400px;">Training, consulting, and automation for every team.</p>
+                </div>
+                <div class="col-lg-3 col-md-6" id="contact">
+                    <h6 class="fw-bold mb-3" style="color: var(--brand-text);">Contact</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a class="text-decoration-none" href="mailto:hello@securitycube.io">hello@securitycube.io</a>
+                        <a class="text-decoration-none" href="tel:+611300000000">+61 1300 000 000</a>
+                        <span class="text-secondary">Melbourne, Australia</span>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div
-                        class="py-5 plan-post shadow-sm d-flex flex-column justify-content-between text-center border rounded-4 text-center">
-                        <div class="plan-top">
-                            <span class="badge text-bg-success text-uppercase mb-2">Popular</span>
-                            <h4 class="fw-bold">Business</h4>
-                            <p class="fs-5 mb-5">$199 per month</p>
-
-                            <div class="price-option mt-3 p-3">
-                                <p><span class="price-tick">✓</span> Quisque rhoncus</p>
-                                <p><span class="price-tick">✓</span> Lorem ipsum dolor</p>
-                                <p><span class="price-tick">✓</span> Vivamus velit mir</p>
-                                <p><span class="price-tick">✓</span> Elit mir ivamus</p>
-                                <p><span class="price-tick">✓</span> Velit mir</p>
-                                <p><span class="price-tick">✓</span> Quisque rhoncus</p>
-                                <p> - </p>
-                                <p> - </p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary mx-auto mt-5">Buy Now</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div
-                        class="py-5 plan-post shadow-sm d-flex flex-column justify-content-between text-center border rounded-4 text-center my-4">
-                        <div class="plan-top">
-                            <h4 class="fw-bold">Agency</h4>
-                            <p class="fs-5 mb-5">$360 per month</p>
-
-                            <div class="price-option mt-3 p-3">
-                                <p><span class="price-tick">✓</span> Quisque rhoncus</p>
-                                <p><span class="price-tick">✓</span> Lorem ipsum dolor</p>
-                                <p><span class="price-tick">✓</span> Vivamus velit mir</p>
-                                <p><span class="price-tick">✓</span> Elit mir ivamus</p>
-                                <p><span class="price-tick">✓</span> Ipsum dolor</p>
-                                <p><span class="price-tick">✓</span> Ipsum dolor</p>
-                                <p><span class="price-tick">✓</span> Ipsum dolor</p>
-                                <p><span class="price-tick">✓</span> Ipsum dolor</p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary mx-auto mt-5">Buy Now</a>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3" style="color: var(--brand-text);">Follow</h6>
+                    <div class="d-flex flex-column gap-2" aria-label="Social links">
+                        <a href="#" class="text-decoration-none" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" class="text-decoration-none" aria-label="YouTube">YouTube</a>
+                        <a href="#" class="text-decoration-none" aria-label="Twitter/X">X</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="process" class="padding-medium">
-        <div class="container">
-            <h3 class="fw-bolder text-center mb-5">
-                How we work
-            </h3>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="icon py-3">
-                        <svg class="text-primary uil--coffee" width="50" height="50">
-                            <use xlink:href="#uil--coffee"></use>
-                        </svg>
-                    </div>
-                    <h5>
-                        Initial Consultation
-                    </h5>
-                    <p>
-                        We'll schedule an initial consultation where we'll discuss your objectives, challenges, and
-                        expectations in detail.
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <div class="icon py-3">
-                        <svg class="text-primary uil--clipboard-alt" width="50" height="50">
-                            <use xlink:href="#uil--clipboard-alt"></use>
-                        </svg>
-                    </div>
-                    <h5>
-                        Strategic Planning
-                    </h5>
-                    <p>
-                        This strategy will outline the channels, tactics, and timelines for achieving your goals
-                        effectively.
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <div class="icon py-3">
-                        <svg class="text-primary uil--comment-alt-chart-lines" width="50" height="50">
-                            <use xlink:href="#uil--comment-alt-chart-lines"></use>
-                        </svg>
-                    </div>
-                    <h5>
-                        Implementation
-                    </h5>
-                    <p>
-                        This may involve a combination of activities such as website development or redesign,
-                        content creation, SEO, PPC advertising, and more.
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <div class="icon py-3">
-                        <svg class="text-primary uil--desktop-alt" width="50" height="50">
-                            <use xlink:href="#uil--desktop-alt"></use>
-                        </svg>
-                    </div>
-                    <h5>
-                        Monitoring and Optimization
-                    </h5>
-                    <p>
-                        We'll track website traffic, engagement levels, conversion rates, and other relevant metrics
-                        to ensure that we're on track to meet your goals.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonial" class="bg-success padding-medium">
-        <div class="container">
-            <h3 class="fw-bolder text-center mb-5">
-                Testimonials
-            </h3>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="offset-md-2 col-md-8 review-content">
-                    <div class="testimonial-swiper overflow-hidden">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="review-item">
-                                    <div class="testimonial-card">
-                                        <img src="images/dash.png">
-                                        <h3 class="lh-base my-3"> From boosting
-                                            your online
-                                            visibility to increasing
-                                            website traffic and driving conversions, we have the tools,
-                                            techniques, and expertise to
-                                            help you achieve success in the digital landscape.</h3>
-                                        <p class="text-primary mt-5">
-                                            <span style="font-weight: 700;">John Geoffrey</span> | Hexagon
-                                            Builders inc., USA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="review-item">
-                                    <div class="testimonial-card">
-                                        <img src="images/dash.png">
-                                        <h3 class="lh-base my-3"> From boosting
-                                            your online
-                                            visibility to increasing
-                                            website traffic and driving conversions, we have the tools,
-                                            techniques, and expertise to
-                                            help you achieve success in the digital landscape.</h3>
-                                        <p class="text-primary mt-5">
-                                            <span style="font-weight: 700;">John Geoffrey</span> | Hexagon
-                                            Builders inc., USA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="review-item">
-                                    <div class="testimonial-card">
-                                        <img src="images/dash.png">
-                                        <h3 class="lh-base my-3"> From boosting
-                                            your online
-                                            visibility to increasing
-                                            website traffic and driving conversions, we have the tools,
-                                            techniques, and expertise to
-                                            help you achieve success in the digital landscape.</h3>
-                                        <p class="text-primary mt-5">
-                                            <span style="font-weight: 700;">John Geoffrey</span> | Hexagon
-                                            Builders inc., USA
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination position-relative pt-5"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="brand-collection" class="bg-secondary padding-medium ">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col d-flex justify-content-center my-3">
-                    <a href="#">
-                        <img src="images/co-logo-1.png" class="img-fluid brand" alt="brand">
-                    </a>
-                </div>
-                <div class="col d-flex justify-content-center my-3">
-                    <a href="#">
-                        <img src="images/co-logo-2.png" class="img-fluid brand" alt="brand">
-                    </a>
-                </div>
-                <div class="col d-flex justify-content-center my-3">
-                    <a href="#">
-                        <img src="images/co-logo-3.png" class="img-fluid brand" alt="brand">
-                    </a>
-                </div>
-                <div class="col d-flex justify-content-center my-3">
-                    <a href="#">
-                        <img src="images/co-logo-4.png" class="img-fluid brand" alt="brand">
-                    </a>
-                </div>
-                <div class="col d-flex justify-content-center my-3">
-                    <a href="#">
-                        <img src="images/co-logo-5.png" class="img-fluid brand" alt="brand">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer" class="bg-danger">
-        <div class="container text-white padding-medium">
-            <div class="row align-items-center">
-                <div class="col-md-5">
-                    <h3 class="display-1 text-white fw-bold">
-                        Let’s Talk
-                    </h3>
-                </div>
-                <div class="col-md-3 ">
-                    <p>Justo, a quisque in accumsan dignissim volutpat quis.Sit pellentesque faucibus arcu lacinia
-                        egestas augue. Sit volutpat vel dui ultricies massa. Sit pellentesque faucibus arcu lacinia
-                        egestas augue. Sit volutpat vel dui ultricies massa.</p>
-                </div>
-                <div class="offset-md-1 col-md-3">
-                    <div>
-                        <p>
-                            <u>hello@yourcompany.com</u>
-                        </p>
-                        <p>
-                            15Th Street Avenue, New York, USA011-554-8798-6556
-                        </p>
-                    </div>
-                    <div class="social-links">
-                        <ul class="d-flex gap-3 list-unstyled">
-                            <li>
-                                <a href="#">
-                                    <svg class="behance" width="30" height="30">
-                                        <use xlink:href="#behance" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <svg class="pinterest" width="30" height="30">
-                                        <use xlink:href="#pinterest" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <svg class="instagram" width="30" height="30">
-                                        <use xlink:href="#instagram" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <svg class="twitter" width="30" height="30">
-                                        <use xlink:href="#twitter" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <svg class="facebook" width="30" height="30">
-                                        <use xlink:href="#facebook" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="text-white">
-        <div class="container text-white">
-            <div class="row py-5">
-                <div class="col text-start">
-                    <p>© 2025 Digital. All rights reserved.</p>
-                </div>
-                <div class="col text-end">
-                    Free HTML Template by: <a href="https://templatesjungle.com/" target="_blank"
-                        class="text-decoration-underline fw-bold"> TemplatesJungle</a>
-                </div>
+            <div class="border-top pt-4" style="border-color:var(--brand-line) !important;">
+                <p class="mb-0 text-secondary">© <span id="year"></span> Security Cube. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="js/plugins.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!--cdn link-->
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Year
+            const y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
 
+            // Navbar scroll effect
+            const nav = document.querySelector('.top-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Scroll reveal
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
 </html>
